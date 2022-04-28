@@ -4,10 +4,167 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <title>Formularz</title>
+    <link rel="stylesheet" href="formStyle.css" />
+    <script src="formScript.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body id="invoice"></body>
+  <body>
+    <div class="wrapper">
+      <form class="label--font">
+        <div class="flex">
+          <select id="gender">
+            <option value="male">Pan</option>
+            <option value="female">Pani</option>
+          </select>
+          <div class="row">
+            <label for="gender">Imię i nazwisko</label><br />
+            <input
+              type="text"
+              class="input-field"
+              id="name"
+              name="name"
+            /><br />
+          </div>
+        </div>
+        <div class="block--space">
+          <label for="pesel">Pesel</label><br />
+          <input
+            type="text"
+            class="input-field"
+            id="pesel"
+            name="pesel"
+          /><br />
+        </div>
+        <div class="block--space">
+          <label for="address">Adres</label><br />
+          <input type="text" class="input-field" id="address" name="address" />
+        </div>
+        <br />
+        <label for="decision__list">Decyzja</label><br />
+        <select id="decision__list">
+          <option value="blank"></option>
+          <option value="noContraindications">brak przeciwwskazań</option>
+          <option value="contraindications">istnienie przeciwwskazań</option>
+        </select>
+        <div class="flex date-form__div">
+          <div>
+            <label for="releaseDate">Data wydania</label>
+            <input
+              type="date"
+              class="date-form"
+              id="releaseDate"
+              name="releaseDate"
+            />
+          </div>
+          <div>
+            <label for="expirationDate">Data ważności</label>
+            <input
+              type="date"
+              class="date-form"
+              id="expirationDate"
+              name="expirationDate"
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- Checkboxes and statement numbers-->
+        <div id="checkbox__div" class="checkbox__div">
+          <div class="div_39k">
+            <input type="checkbox" id="39k" class="showStLbl" />
+            <label for="39k">art. 39k ust. 1</label>
+            <input
+              type="text"
+              class="hidden swap statement--number--form"
+              id="statementLabel39k"
+              placeholder="Numer orzeczenia"
+            /><br />
+          </div>
+          <div class="div__82u1p1">
+            <input
+              type="checkbox"
+              id="82u1p1"
+              class="options showStLbl block--space"
+            />
+            <label for="82u1p1">art. 82 ust. 1 pkt 1 lit. a</label>
+            <input
+              type="text"
+              class="hidden swap statement--number--form"
+              id="statementLabel82u1p1"
+              placeholder="Numer orzeczenia"
+            /><br />
+            <div class="hidden">
+              <input type="checkbox" id="82u1p1Amateur" />
+              <label for="82u1p1Amateur">AM, A1, A2, A, B1, B, B+E, T</label
+              ><br />
+              <input type="checkbox" id="82u1p1Professional" />
+              <label for="82u1p1Professional"
+                >C1, C1+E, C, C+E, D1, D1+E, D, D+E</label
+              >
+            </div>
+          </div>
+          <div class="82u1p2__div">
+            <input
+              type="checkbox"
+              id="82u1p2"
+              class="options showStLbl block--space"
+            />
+            <label for="82u1p2">art. 82 ust. 1 pkt 2</label>
+            <input
+              type="text"
+              class="hidden swap statement--number--form"
+              id="statementLabel82u1p2"
+              placeholder="Numer orzeczenia"
+            /><br />
+            <div class="hidden">
+              <input type="checkbox" id="82u1p2Amateur" />
+              <label for="82u1p2Amateur">AM, A1, A2, A, B1, B, B+E, T</label
+              ><br />
+              <input type="checkbox" id="82u1p2Professional" />
+              <label for="82u1p2Professional"
+                >C1, C1+E, C, C+E, D1, D1+E, D, D+E</label
+              >
+            </div>
+          </div>
+          <div class="82u1p6__div">
+            <input
+              type="checkbox"
+              id="82u1p6"
+              class="options showStLbl block--space"
+            />
+            <label for="82u1p6">art. 82 ust. 1 pkt 6</label>
+            <input
+              type="text"
+              class="hidden swap statement--number--form"
+              id="statementLabel82u1p6"
+              placeholder="Numer orzeczenia"
+            /><br />
+            <div class="hidden">
+              <input type="checkbox" id="82u1p6katA" />
+              <label for="82u1p6katA">A1, A2, A</label><br />
+              <input type="checkbox" id="82u1p6katB" />
+              <label for="82u1p6katB">B1, B, B+E</label><br />
+              <input type="checkbox" id="82u1p6katCD" />
+              <label for="82u1p6katCD"
+                >C1, C1+E, C, C+E, D1, D1+E, D, D+E</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" id="submit" class="button" />
+        <!-- Passing data to the localStorage -->
+      </form>
+    </div>
+    <p class="footer">
+      Autor: <span class="white">Maciej Semeniuk</span>.&nbsp; Kontakt:
+      <span class="white">maciejsemeniuk95@gmail.com</span>
+    </p>
+  </body>
 </html>

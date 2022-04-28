@@ -79,7 +79,7 @@ submitBtn.addEventListener("click", function (e) {
 
   //   console.log(localStorage.getItem("decision"));
 
-  window.open("index.html");
+  window.open("generate.html");
 });
 // show statement number Label on checkbox activate
 
