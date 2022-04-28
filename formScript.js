@@ -5,6 +5,9 @@ const expirationDateLabel = document.getElementById("expirationDate");
 const releaseDateLabel = document.getElementById("releaseDate");
 const actualDate = new Date();
 
+console.log(new Date(actualDate.getTime() + 157770000000));
+console.log(new Date());
+
 releaseDateLabel.valueAsDate = actualDate;
 
 submitBtn.addEventListener("click", function (e) {
@@ -116,7 +119,7 @@ decisionList.addEventListener("change", function () {
     expirationDate.removeAttribute("disabled");
     releaseDateLabel.valueAsDate = actualDate;
     expirationDateLabel.valueAsDate = new Date(
-      actualDate.getTime() + 157784760000
+      actualDate.getTime() + 157770000000
     );
   }
 });
