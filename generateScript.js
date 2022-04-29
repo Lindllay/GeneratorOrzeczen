@@ -628,7 +628,7 @@ window.onload = function () {
   const invoice = this.document.getElementById("invoice");
   const opt = {
     margin: 0,
-    filename: "myfile",
+    filename: `${localStorage.getItem("name")}`,
     image: { type: "jpeg", quality: 1 },
     // imageTimeout: 0,
     // html2canvas: { scale: 1 },
