@@ -635,4 +635,5 @@ window.onload = function () {
     // jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
   };
   html2pdf().from(invoice).set(opt).save();
+  localStorage.clear();
 };
